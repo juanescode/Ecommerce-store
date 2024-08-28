@@ -13,7 +13,7 @@ interface Query {
 const getProducts = async (query: Query): Promise<Product[]> => {
   const uniqueURL = `${URL}?timestamp=${new Date().getTime()}`;
   const url = qs.stringifyUrl({
-    url: URL,
+    url: uniqueURL, // Usamos uniqueURL aquí
     query: {
       colorId: query.colorId,
       sizeId: query.sizeId,
